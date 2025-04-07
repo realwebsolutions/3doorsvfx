@@ -1,11 +1,100 @@
-body, html {
+/* Reset margins & paddings globally */
+* {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
-    font-family: 'Orbitron', Arial, sans-serif;
-    color: white;
-    height: 100%;
+    box-sizing: border-box;
   }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black; /* fallback background */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  /* Remove unwanted padding from Bootstrap container if used */
+  body {
+    padding-top: 0 !important;
+  }
+  
+  /* Each full screen section fix */
+  .section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Optional for header to not push anything */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 20px;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  }
+  
+  .site-header.fade-out {
+    opacity: 0;
+    transform: translateY(-50px);
+    pointer-events: none;
+  }
+  
+  
+  /* Logo Styling */
+  .site-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+  
+  /* Heading Styling */
+  .site-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .site-logo {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .site-heading {
+      font-size: 1.5rem;
+    }
+  
+    .site-header {
+      gap: 8px;
+      padding: 15px 10px;
+    }
+  }
+  
+  .content-box {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff; /* white text */
+    font-family: 'Orbitron', sans-serif;
+    max-width: 800px;
+  }
+  
   
   .content-box h1, .content-box h2, .content-box h3 {
     font-family: 'Orbitron', Arial, sans-serif;
@@ -68,20 +157,13 @@ body, html {
     border-radius: 15px;
   }
   
-  .section1 { background-image: url('images/Image\ 1.jpg'); }
-  .section2 { background-image: url('images/Image\ 2.jpg'); }
+  .section1 { background-image: url('images/Image\ 2.jpg'); }
+  .section2 { background-image: url('images/Image\ 6.jpg'); }
   .section3 { background-image: url('images/Image\ 3.jpg'); }
   .section4 { background-image: url('images/Image\ 4.jpg'); }
   .section5 { background-image: url('images/Image\ 5.jpg'); }
-  .section6 { background-image: url('images/Image\ 6.jpg'); }
+  .section6 { background-image: url('images/Image\ 1.jpg'); }
 
-  /* Logo */
-  .logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-  }
   
   /* Dot Navigation */
   .dots-navigation {
@@ -130,4 +212,5 @@ body, html {
   .whatsapp-float:hover {
     transform: scale(1.1);
   }
+  
   
