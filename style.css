@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Orbitron', Arial, sans-serif;
+    color: white;
+    height: 100%;
+  }
+  
+  .content-box h1, .content-box h2, .content-box h3 {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .content-box p {
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  
+  .content-box button, .content-box a {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .content-box button:hover, .content-box a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  
+  .section {
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .content-box {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+  }
+  
+  .section1 { background-image: url('images/Image\ 1.jpg'); }
+  .section2 { background-image: url('images/Image\ 2.jpg'); }
+  .section3 { background-image: url('images/Image\ 3.jpg'); }
+  .section4 { background-image: url('images/Image\ 4.jpg'); }
+  .section5 { background-image: url('images/Image\ 5.jpg'); }
+  .section6 { background-image: url('images/Image\ 6.jpg'); }
+
+  /* Logo */
+  .logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+  }
+  
+  /* Dot Navigation */
+  .dots-navigation {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dot.active {
+    background: white;
+  }
+  
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
