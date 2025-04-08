@@ -1,4 +1,4 @@
-/* Reset margins & paddings globally */
+/* Reset + Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,30 +8,17 @@
   html, body {
     height: 100%;
     width: 100%;
-    background-color: black; /* fallback background */
+    background-color: black;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
   }
   
-  /* Remove unwanted padding from Bootstrap container if used */
   body {
     padding-top: 0 !important;
   }
   
-  /* Each full screen section fix */
-  .section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  /* Optional for header to not push anything */
+  /* Header */
   .site-header {
     position: fixed;
     top: 0;
@@ -42,7 +29,7 @@
     align-items: center;
     padding: 20px 40px;
     gap: 20px;
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
   
   .site-header.fade-out {
@@ -51,15 +38,12 @@
     pointer-events: none;
   }
   
-  
-  /* Logo Styling */
   .site-logo {
     width: 100px;
     height: 100px;
     object-fit: contain;
   }
   
-  /* Heading Styling */
   .site-heading {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.2rem;
@@ -68,7 +52,6 @@
     margin: 0;
   }
   
-  /* Responsive */
   @media (max-width: 768px) {
     .site-logo {
       width: 50px;
@@ -85,56 +68,18 @@
     }
   }
   
-  .content-box {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    color: #fff; /* white text */
-    font-family: 'Orbitron', sans-serif;
-    max-width: 800px;
-  }
-  
-  
-  .content-box h1, .content-box h2, .content-box h3 {
-    font-family: 'Orbitron', Arial, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  .content-box p {
-    font-family: 'Arial', sans-serif;
-    font-weight: 300;
-    line-height: 1.5;
-  }
-  
-  .content-box button, .content-box a {
-    font-family: 'Orbitron', Arial, sans-serif;
-    font-weight: 500;
-    padding: 10px 20px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .content-box button:hover, .content-box a:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  
+  /* Sections */
   .section {
     height: 100vh;
+    width: 100%;
     position: relative;
-    background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   
   .section::before {
@@ -151,19 +96,51 @@
   .content-box {
     position: relative;
     z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
     max-width: 800px;
-    padding: 20px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 15px;
+    font-family: 'Orbitron', sans-serif;
   }
   
-  .section1 { background-image: url('images/Image\ 2.jpg'); }
-  .section2 { background-image: url('images/Image\ 6.jpg'); }
-  .section3 { background-image: url('images/Image\ 3.jpg'); }
-  .section4 { background-image: url('images/Image\ 4.jpg'); }
-  .section5 { background-image: url('images/Image\ 5.jpg'); }
-  .section6 { background-image: url('images/Image\ 1.jpg'); }
-
+  .content-box h1, .content-box h2, .content-box h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .content-box p {
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  
+  .content-box button,
+  .content-box a {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .content-box button:hover,
+  .content-box a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Background Images */
+  .section1 { background-image: url('images/Image 2.jpg'); }
+  .section2 { background-image: url('images/Image 3.jpg'); }
+  .section3 { background-image: url('images/Image 4.jpg'); }
+  .section4 { background-image: url('images/Image 5.jpg'); }
+  .section5 { background-image: url('images/Image 6.jpg'); }
+  .section6 { background-image: url('images/Image 1.jpg'); }
   
   /* Dot Navigation */
   .dots-navigation {
@@ -183,13 +160,18 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dot:hover {
+    transform: scale(1.2);
   }
   
   .dot.active {
-    background: white;
+    background-color: #ffffff;
   }
   
+  /* WhatsApp Button */
   .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -200,7 +182,7 @@
     width: 55px;
     height: 55px;
     font-size: 24px;
-    z-index: 5;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,5 +194,4 @@
   .whatsapp-float:hover {
     transform: scale(1.1);
   }
-  
   
